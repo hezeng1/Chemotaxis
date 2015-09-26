@@ -23,8 +23,8 @@ public class Chemotaxis extends PApplet {
 
  public void setup()   
  {     
- 	size(400,400);
- 	colony = new Bacteria[500];
+ 	
+ 	colony = new Bacteria[100];
  	for(int p = 0; p<colony.length;p++)
  	{
  		colony[p] = new Bacteria(200,200);
@@ -33,8 +33,8 @@ public class Chemotaxis extends PApplet {
  public void draw()   
  { 
    background(255);
-    x= x +  (int)(Math.random()*7)-3;
-    y= y +  (int)(Math.random()*7)-3;
+    x= x +  (int)(Math.random()*13)-6;
+    y= y +  (int)(Math.random()*13)-6;
     fill(255, 0, 0);
     arc(x+50,y+50,50,50,PI/4,PI*7/4);
    for(int i = 0; i<colony.length;i++)
@@ -82,6 +82,7 @@ public class Chemotaxis extends PApplet {
    }  
  }
  
+  public void settings() { 	size(400,400); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Chemotaxis" };
     if (passedArgs != null) {
